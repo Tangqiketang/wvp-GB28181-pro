@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  wvp:
+    build: .
+    container_name: wvp
+    image: wvp:latest
+    environment:
+      - TZ=Asia/Shanghai
+    network_mode: host
+    ports:
+      - "5060:5060"
+      - "8080:8080"
+    volumes:
+      - /opt/logs/wvp/record:/opt/logs/wvp/record
+      - /opt/logs/wvp:/opt/logs/wvp
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+
