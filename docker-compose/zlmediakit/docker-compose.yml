@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  zlmediakit:
+    image: registry.cn-beijing.aliyuncs.com/wuhm/zlmediakit:master
+    container_name: zlmediakit
+    privileged: true
+   # network_mode: host
+    # 指定加载配置
+    # command: /opt/media/bin/MediaServer -c /opt/media/conf/config.ini
+    # 1935:rtmp; 554:rtsp;
+    ports:
+      - "1935:1935"
+      - "6080:80"
+      - "1443:443"
+      - "554:554"
+      - "8000:8000"
+      - "9000:9000/udp"
+      - "10000:10000/tcp"
+      - "10000:10000/udp"
+      - "30000-30500:30000-30500/tcp"
+      - "30000-30500:30000-30500/udp"
+    volumes:
+      #  自定义MediaServer
+      - ./bin:/opt/media/bin
+      #  自定义config.ini
+      - ./conf/config.ini:/opt/media/conf/config.ini
+      #  自定义ffmpeg
+      # - ./ffmpeg/bin:/home/bin
+    environment:
+      TZ: "Asia/Shanghai"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
