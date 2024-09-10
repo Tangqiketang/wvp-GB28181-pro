@@ -62,7 +62,7 @@ sip:
   # 如果要监听多张网卡，可以使用逗号分隔多个IP， 例如： 192.168.1.4,10.0.0.4
   # 如果不明白，就使用0.0.0.0，大部分情况都是可以的
   # 请不要使用127.0.0.1，任何包括localhost在内的域名都是不可以的。
-  ip: 192.168.0.226
+  ip: 192.168.3.226
   # [可选] 28181服务监听的端口
   port: 5060
   # 根据国标6.1.2中规定，domain宜采用ID统一编码的前十位编码。国标附录D中定义前8位为中心编码（由省级、市级、区级、基层编号组成，参照GB/T 2260-2007）
@@ -81,15 +81,15 @@ sip:
 media:
   id: your_server_id
   # [必须修改] zlm服务器的内网IP
-  ip: 192.168.0.226
+  ip: 192.168.3.226
   # [必须修改] zlm服务器的http.port
   http-port: 6080
   # [可选] 返回流地址时的ip，置空使用 media.ip
-  stream-ip: 192.168.0.226
+  stream-ip: 192.168.3.226
   # [可选] wvp在国标信令中使用的ip，此ip为摄像机可以访问到的ip， 置空使用 media.ip
-  sdp-ip: 192.168.0.226
+  sdp-ip: 192.168.3.226
   # [可选] zlm服务器的hook所使用的IP, 默认使用sip.ip
-  hook-ip: 192.168.0.226
+  hook-ip: 192.168.3.226
   # [可选] zlm服务器的http.sslport, 置空使用zlm配置文件配置
   http-ssl-port: 1443
   # [可选] zlm服务器的hook.admin_params=secret
@@ -122,8 +122,8 @@ user-settings:
   allowed-origins:
     - http://localhost:38080
     - http://127.0.0.1:38080
-    - http://192.168.0.226:38080
-    - https://192.168.0.226:38080
+    - http://192.168.3.226:38080
+    - https://192.168.3.226:38080
   record-path: /opt/logs/wvp/record/
   push-authority: false
 # [可选] 日志配置, 一般不需要改
