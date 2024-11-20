@@ -8,6 +8,8 @@ services:
     environment:
       - TZ=Asia/Shanghai
     network_mode: host
+    env_file:
+      - .env
     ports:
       - "5060:5060"
       - "8080:8080"

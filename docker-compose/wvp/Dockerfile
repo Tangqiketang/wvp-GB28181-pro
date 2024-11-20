@@ -10,4 +10,4 @@ ENV TZ=Asia/Shanghai
 ADD wvp-pro.jar   /app.jar
 RUN bash -c 'touch /app.jar'
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
-CMD ["--spring.profiles.active=dev"]
+CMD ["--spring.profiles.active=release"]
