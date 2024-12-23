@@ -123,7 +123,9 @@ user-settings:
     - https://localhost:443
     - https://${SIP_SERVER_IP:192.168.3.226}:443
     - https://${SIP_SERVER_IP:192.168.3.226}:1443
+    - https://${SIP_SERVER_IP:192.168.3.226}:2443
     - https://${SIP_SERVER_IP:192.168.3.226}
+    - http://${SIP_SERVER_IP:192.168.3.226}:80
   record-path: /opt/logs/wvp/record/
   push-authority: false
 # [可选] 日志配置, 一般不需要改
